@@ -21,6 +21,10 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
-  if
+  if message.channel.is_private and message.author.id != "718421206059057234":
     if message.content.startswith("!help"):
-      
+      await client.send_message(message.channel, "")
+
+
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
