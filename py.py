@@ -29,9 +29,9 @@ async def on_message(message):
         await client.send_message(message.channel, "Commands:\n```!help - Appeal Bot에 대한 명령어들을 확인합니다.\n!appeal (playerName) - 당신의 벤 또는 뮤트 항소를 합니다.\n!accept (discordID) - 해당 유저가 항소 한 것을 수락합니다. [관리자만]\n!deny (discordID) - 해당 유저가 항소 한 것을 거절합니다.```")
       if message.content[1:7] == "appeal":
         if message.content[8:]:
-          await client.send_message(discord.utils.get(client.get_all_channels(), id="718434205448536066"), "@everyone\n[어필 정보]\n```유저 디스코드이름: " + message.author + "\n유저 디스코드아이디: " + message.author.id + "\n유저 마인크래프트닉네임: " + message.content[8:])
+          await client.send_message(discord.utils.get(client.get_all_channels(), id="718434205448536066"), "@everyone\n```디스코드 이름: " + message.author.mention + "\n디스코드 아이디: " + message.author.id + "\n마인크래프트 닉네임: " + message.content[8:])
         else:
-          await client.send_message(message.channel, "```해당 명령어는 해당 서버에서 사용이 불가능합니다.```")
+          await client.send_message(message.channel, "```마인크래프트 닉네임을 작성하여 주세요.```")
 
 
 access_token = os.environ["BOT_TOKEN"]
